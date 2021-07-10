@@ -2,11 +2,15 @@ version: "3.8"
 services: 
     server:
         container_name: server
-        image: "niginx:stable-alpine"
+        image: "nginx:stable-alpine"
         ports: 
             - "8080:80"
         volumes: 
-            - ./niginx/niginx.config:./etc/niginx/niginx.config:ro
+            - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+            - ./src:/var/www/html
+        depends_on: 
+            - php
+            - mysql
     php:
         container_name: php
         build:
