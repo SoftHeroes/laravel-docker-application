@@ -3,10 +3,6 @@
     
         docker-compose run --rm composer <NORMAL COMPOSER OPTION>
 
-- Aliasing command
-
-        alias composer=docker-compose run --rm composer
-
 <br>
 
 ## Starting Nginx Server
